@@ -1,0 +1,35 @@
+{
+  /*
+   * ห้ามเปลี่ยน "module" เป็น node16/nodenext และห้ามใส่ "moduleResolution":
+   * "node"/"node10" กลับเข้ามา:
+   * - โปรเจกต์นี้คอมไพล์แบบ CommonJS (Playwright + vitest) และ import แบบ
+   *   relative ไม่ใส่นามสกุลตลอดทั้งเฟรมเวิร์ก — ถ้าใช้ node16/nodenext จะขึ้น
+   *   TS2835 ("Relative import paths need explicit file extensions...") ทั้งโปรเจกต์
+   * - TypeScript 6.x (VS Code รุ่นใหม่ใช้รุ่นนี้) deprecate moduleResolution=node10
+   *   ทำให้ใส่ "moduleResolution": "node" แล้ว VS Code ขึ้น error TS5107
+   *   แต่ "ignoreDeprecations": "6.0" กลับโดน tsc 5.9.3 ของโปรเจกต์ปฏิเสธ (TS5103)
+   *   ⇒ วิธีเดียวที่ผ่านทั้งสองรุ่น (ทดสอบจริงกับ TS 5.9.3 และ 6.0.3):
+   *      ลบ moduleResolution ทิ้ง — "module": "commonjs" จะ default
+   *      เป็น node10 เอง พฤติกรรมการ resolve เหมือนเดิม 100%
+   */
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": [
+    "tests/**/*.ts",
+    "pages/**/*.ts",
+    "fixtures/**/*.ts",
+    "helpers/**/*.ts",
+    "config/**/*.ts",
+    "playwright.config.ts"
+  ]
+}

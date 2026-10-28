@@ -1,0 +1,38 @@
+{
+  "name": "learnace-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack Automated Testing (E2E + API + Database) for https://learnace.tech — Playwright + TypeScript",
+  "scripts": {
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=\"Desktop Chrome\"",
+    "test:firefox": "playwright test --project=\"Desktop Firefox\"",
+    "test:safari": "playwright test --project=\"Desktop Safari\"",
+    "test:mobile-chrome": "playwright test --project=\"Mobile Chrome\"",
+    "test:mobile-safari": "playwright test --project=\"Mobile Safari\"",
+    "test:e2e": "playwright test tests/e2e",
+    "test:api": "playwright test tests/api",
+    "test:db": "playwright test tests/database",
+    "test:unit": "vitest run",
+    "test:smoke": "playwright test tests/e2e/website-access.spec.ts --project=\"Desktop Chrome\"",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report playwright-report",
+    "install:browsers": "playwright install",
+    "gen:fixtures": "node scripts/gen-fixtures.js",
+    "mock:server": "node scripts/mock-app-server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.23.1",
+    "@vitest/ui": "^2.1.9",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "optionalDependencies": {
+    "mysql2": "^3.11.4",
+    "pg": "^8.13.1"
+  }
+}

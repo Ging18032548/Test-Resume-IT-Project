@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment secrets — ห้าม commit ค่าจริง
+.env
+.env.local
+.env.*.local
+
+# Playwright artifacts
+test-results/
+playwright-report/
+reports/
+blob-report/
+
+# Generated test fixtures (สร้างใหม่ได้ด้วย npm run gen:fixtures)
+fixtures/files/
+
+# Database discovery output (อาจมี metadata ที่ไม่ควร commit)
+reports/db-*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log

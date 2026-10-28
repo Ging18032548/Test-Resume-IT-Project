@@ -1,0 +1,20 @@
+[
+  {
+    "name": "KANYARAT PATTHANAN",
+    "email": "kanyarat.p.hr@gmail.com",
+    "passwordEnv": "KanyaratHr#99$ ",
+    "career": "HR & Recruitment"
+  },
+  {
+    "name": "PHIRAPHAT CHAYANON",
+    "email": "phiraphat.c.finance@gmail.com",
+    "passwordEnv": "PhiraphatFin*88_",
+    "career": "Finance & Financial Analyst"
+  },
+  {
+    "name": "VARIN METHAWEE",
+    "email": "varin.m.uxui@gmail.com",
+    "passwordEnv": "VarinDesign#55+",
+    "career": "UI/UX Product Design"
+  }
+]
